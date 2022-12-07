@@ -102,7 +102,12 @@ public class App_Function {
             getCurrentLetter();
             checkDir(subbedPath+"/"+currentLetter);
 
-            String to_path = subbedPath+"/"+currentLetter+"/"+currentAnime;
+            if (seasonsName==null){
+                to_path = subbedPath + "/" + currentLetter + "/" + currentAnime;
+            }
+            else{
+                to_path = subbedPath + "/" + currentLetter + "/" + currentAnime + "/" + currentAnime+" "+seasonsName;
+            }
             checkDir(to_path);
             
             Path moveTo_path = (new File(to_path+"/"+Anime.getName())).toPath();
