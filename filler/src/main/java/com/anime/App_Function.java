@@ -13,6 +13,8 @@ public class App_Function {
     String dubbedPath;
     String subbedPath;
     String currentAnime;
+    String seasonsName;
+    String to_path;
     char currentLetter;
 
 
@@ -46,6 +48,10 @@ public class App_Function {
 
     public void getAnime_name(String Anime) {
         this.currentAnime = Anime.substring(0, Anime.indexOf(" Episode") );
+        if (currentAnime.contains("Season")){
+            this.seasonsName = currentAnime.substring(currentAnime.indexOf("Season"), currentAnime.length());
+            this.currentAnime = currentAnime.substring(0, currentAnime.indexOf(" Season"));
+        }
     }
 
     public void getCurrentLetter() {
@@ -70,7 +76,12 @@ public class App_Function {
             getCurrentLetter();
             checkDir(dubbedPath+"/"+currentLetter);
 
-            String to_path = dubbedPath+"/"+currentLetter+"/"+currentAnime;
+            if (seasonsName==null){
+                to_path = dubbedPath + "/" + currentLetter + "/" + currentAnime;
+            }
+            else{
+                to_path = dubbedPath + "/" + currentLetter + "/" + currentAnime + "/" + currentAnime+" "+seasonsName;
+            }
             checkDir(to_path);
             
             Path moveTo_path = (new File(to_path+"/"+Anime.getName())).toPath();

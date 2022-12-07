@@ -21,6 +21,13 @@ public class App_Function_Test {
     }
     
     @Test
+    public void getting_the_season_name() {
+        app_class.getAnime_name(
+                "Chainsaw Man Season 2 Episode 7 English Dubbed - Watch cartoons online, Watch anime online, English dub anime.mp4");
+        assertEquals("Season 2", app_class.seasonsName);
+    }
+    
+    @Test
     public void getting_the_first_letter() {
         app_class.getAnime_name("Chainsaw Man Episode 7 English Dubbed - Watch cartoons online, Watch anime online, English dub anime.mp4");
         app_class.getCurrentLetter();
