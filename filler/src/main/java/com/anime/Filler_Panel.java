@@ -33,7 +33,7 @@ public class Filler_Panel extends JPanel{
 
     }
 
-    
+    //Load all the components to the Jframe
     public void frameInit() {
 
         RUNBUTTON_CLASS RunButton = new RUNBUTTON_CLASS();
@@ -76,6 +76,7 @@ public class Filler_Panel extends JPanel{
 
 }
 
+//Class for the Run button
 class RUNBUTTON_CLASS extends JButton{
     public RUNBUTTON_CLASS(){
         this.setText("RUN");
@@ -98,6 +99,7 @@ class RUNBUTTON_CLASS extends JButton{
 
 }
 
+//Class for the Options Button
 class OPTIONSBUTTON_CLASS extends JButton{
     public OPTIONSBUTTON_CLASS(){
         this.setText("OPTIONS");
@@ -121,6 +123,7 @@ class OPTIONSBUTTON_CLASS extends JButton{
     } 
 }
 
+//Class for the List where the Results will be printed
 class RESULTSLIST_CLASS extends javax.swing.JList<String>{
     List<String> log = new ArrayList<String>();
 
